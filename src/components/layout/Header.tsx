@@ -33,7 +33,6 @@ export function Header() {
 
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language);
-    // Here you would typically also update your i18n configuration
   };
 
   return (
@@ -54,8 +53,8 @@ export function Header() {
             <Link to="/" className="text-gray-700 hover:text-green-600">
               Home
             </Link>
-            <Link to="/marketplace" className="text-gray-700 hover:text-green-600">
-              Marketplace
+            <Link to="/market" className="text-gray-700 hover:text-green-600">
+              Market
             </Link>
             <Link to="/weather" className="text-gray-700 hover:text-green-600">
               Weather
@@ -130,11 +129,11 @@ export function Header() {
             Home
           </Link>
           <Link
-            to="/marketplace"
+            to="/market"
             className="block text-gray-700 hover:text-green-600"
             onClick={() => setIsMenuOpen(false)}
           >
-            Marketplace
+            market
           </Link>
           <Link
             to="/weather"
