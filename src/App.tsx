@@ -2,9 +2,11 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Dashboard } from './pages/Dashboard';
 import Home from './pages/Home';
+import Market from './pages/Market';
 import { SignInPage } from './pages/SigninPage';
 import { CreateAccountPage } from './pages/CreateAccountPage';
 import WeatherPage from './pages/WeatherPage';
+
 
 function App() {
   return (
@@ -18,6 +20,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/createaccount" element={<CreateAccountPage />} />
             <Route path="/weather" element={<WeatherPage />} />
+            <Route path="/market" element={<Market />} />
           </Routes>
         </main>
       </div>

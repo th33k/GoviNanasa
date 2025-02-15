@@ -71,7 +71,7 @@ export function Dashboard() {
           </div>
         </DashboardCard>
 
-        <DashboardCard title="Marketplace" icon={ShoppingBag}>
+        <DashboardCard title="market" icon={ShoppingBag}>
           <div className="space-y-2">
             <p className="text-sm text-gray-600">Recent Transactions</p>
             <p className="font-semibold">5 new orders</p>
