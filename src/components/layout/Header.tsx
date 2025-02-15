@@ -1,31 +1,92 @@
 import { useState } from 'react';
-import { Menu, X, User } from 'lucide-react';
+import { Menu, X, User, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../store/auth';
 import { Button } from '../ui/Button';
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+
+interface Language {
+  code: string;
+  name: string;
+  nativeName: string;
+}
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [currentLanguage, setCurrentLanguage] = useState<Language>({
+    code: 'en',
+    name: 'English',
+    nativeName: 'English'
+  });
   const { isAuthenticated, user, logout } = useAuthStore();
+
+  const languages: Language[] = [
+    { code: 'en', name: 'English', nativeName: 'English' },
+    { code: 'si', name: 'Sinhala', nativeName: 'සිංහල' },
+    { code: 'ta', name: 'Tamil', nativeName: 'தமிழ்' }
+  ];
+
+  const handleLanguageChange = (language: Language) => {
+    setCurrentLanguage(language);
+    // Here you would typically also update your i18n configuration
+  };
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white shadow">
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
+            <Link to="/" className="text-xl font-bold text-green-600">
+            ගොවි නැණස
+            </Link>
             <Link to="/" className="text-xl font-bold text-blue-600">
             <img src="/assets/Logo.png" alt="Logo" className="h-8 w-auto" />
             </Link>
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="text-gray-700 hover:text-blue-600">
+          <nav className="hidden md:flex items-center space-x-6">
+            <Link to="/" className="text-gray-700 hover:text-green-600">
               Home
             </Link>
-            <Link to="/dashboard" className="text-gray-700 hover:text-blue-600">
-              Dashboard
+            <Link to="/marketplace" className="text-gray-700 hover:text-green-600">
+              Marketplace
             </Link>
+            <Link to="/weather" className="text-gray-700 hover:text-green-600">
+              Weather
+            </Link>
+            <Link to="/support" className="text-gray-700 hover:text-green-600">
+              Support
+            </Link>
+
+            {/* Language Switcher */}
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="ghost" size="sm" className="flex items-center gap-2">
+                  <Globe size={18} />
+                  <span>{currentLanguage.nativeName}</span>
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                {languages.map((language) => (
+                  <DropdownMenuItem
+                    key={language.code}
+                    onClick={() => handleLanguageChange(language)}
+                    className="flex items-center gap-2"
+                  >
+                    <span>{language.nativeName}</span>
+                    <span className="text-gray-500 text-sm">({language.name})</span>
+                  </DropdownMenuItem>
+                ))}
+              </DropdownMenuContent>
+            </DropdownMenu>
+
+            {/* Auth Button */}
             <Link to="/weather" className="text-gray-800 hover:text-blue-500">
             Weather
            </Link>
@@ -42,7 +103,7 @@ export function Header() {
               </div>
             ) : (
               <Link to="/login">
-                <Button>Sign In</Button>
+                <Button className="bg-green-600 hover:bg-green-700">Sign In</Button>
               </Link>
             )}
           </nav>
@@ -66,18 +127,52 @@ export function Header() {
         <div className="p-6 space-y-4">
           <Link
             to="/"
-            className="block text-gray-700 hover:text-blue-600"
+            className="block text-gray-700 hover:text-green-600"
             onClick={() => setIsMenuOpen(false)}
           >
             Home
           </Link>
           <Link
-            to="/dashboard"
-            className="block text-gray-700 hover:text-blue-600"
+            to="/marketplace"
+            className="block text-gray-700 hover:text-green-600"
             onClick={() => setIsMenuOpen(false)}
           >
-            Dashboard
+            Marketplace
           </Link>
+          <Link
+            to="/weather"
+            className="block text-gray-700 hover:text-green-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Weather
+          </Link>
+          <Link
+            to="/support"
+            className="block text-gray-700 hover:text-green-600"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            Support
+          </Link>
+
+          {/* Mobile Language Switcher */}
+          <div className="py-2 border-t border-gray-200">
+            <p className="text-sm text-gray-500 mb-2">Select Language</p>
+            {languages.map((language) => (
+              <button
+                key={language.code}
+                onClick={() => {
+                  handleLanguageChange(language);
+                  setIsMenuOpen(false);
+                }}
+                className="w-full text-left py-2 px-4 hover:bg-gray-100 rounded-md flex items-center justify-between"
+              >
+                <span>{language.nativeName}</span>
+                <span className="text-sm text-gray-500">({language.name})</span>
+              </button>
+            ))}
+          </div>
+
+          {/* Mobile Auth Button */}
           {isAuthenticated ? (
             <Button
               variant="outline"
@@ -92,7 +187,7 @@ export function Header() {
             </Button>
           ) : (
             <Link to="/login" onClick={() => setIsMenuOpen(false)}>
-              <Button className="w-full">Sign In</Button>
+              <Button className="w-full bg-green-600 hover:bg-green-700">Sign In</Button>
             </Link>
           )}
         </div>
