@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { Dashboard } from './pages/Dashboard';
 import Home from './pages/Home';
-import { SignInPage } from './pages/SignInPage';
+import { SignInPage } from './pages/SigninPage';
 import { CreateAccountPage } from './pages/CreateAccountPage';
 import WeatherPage from './pages/WeatherPage';
 

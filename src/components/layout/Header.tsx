@@ -33,7 +33,6 @@ export function Header() {
 
   const handleLanguageChange = (language: Language) => {
     setCurrentLanguage(language);
-    // Here you would typically also update your i18n configuration
   };
 
   return (
@@ -87,9 +86,6 @@ export function Header() {
             </DropdownMenu>
 
             {/* Auth Button */}
-            <Link to="/weather" className="text-gray-800 hover:text-blue-500">
-            Weather
-           </Link>
             {isAuthenticated ? (
               <div className="relative">
                 <Button
