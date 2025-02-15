@@ -1,4 +1,4 @@
-import { Lock, User, Key, Phone, UserPlus, ArrowRight } from "lucide-react";
+import { Lock, Key, Phone, UserPlus } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import {
   Card,
