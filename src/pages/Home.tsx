@@ -107,7 +107,7 @@ export default function Home() {
               </CarouselItem>
               <CarouselItem>
                 <FeatureCard
-                  title="Digital Marketplace"
+                  title="Digital market"
                   icon={Store}
                   description="Connect directly with buyers, access fair prices, and sell your produce without intermediaries"
                   imagePath='assets/marketplace.webp'
@@ -137,7 +137,7 @@ export default function Home() {
             imagePath='assets/weather.webp'
           />
           <FeatureCard
-            title="Digital Marketplace"
+            title="Digital market"
             icon={Store}
             description="Connect directly with buyers, access fair prices, and sell your produce without intermediaries"
             imagePath='assets/marketplace.webp'

@@ -1,5 +1,4 @@
-import { Lock, Key, Phone, UserPlus } from "lucide-react";
-import { Button } from "@/components/ui/Button";
+import { Lock, Key, Phone, UserPlus, User } from "lucide-react";
 import {
   Card,
   CardContent,
@@ -11,12 +10,12 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/Button";
 
-export function CreateAccountPage() {
+const CreateAccountPage = () => {
   const [passwordError, setPasswordError] = useState("");
 
-  const validatePassword = (password: string, confirmPassword: string) => {
+  const validatePassword = (password: string, confirmPassword: string): boolean => {
     if (password !== confirmPassword) {
       setPasswordError("Passwords do not match");
       return false;
@@ -43,6 +42,34 @@ export function CreateAccountPage() {
           </CardHeader>
 
           <CardContent className="grid gap-4">
+            <div className="grid gap-2">
+              <Label htmlFor="firstName" className="flex items-center gap-1">
+                <User className="w-4 h-4 text-green-600" />
+                First Name
+              </Label>
+              <Input
+                id="firstName"
+                type="text"
+                placeholder="Enter your first name"
+                className="focus-visible:ring-green-600"
+                required
+              />
+            </div>
+
+            <div className="grid gap-2">
+              <Label htmlFor="lastName" className="flex items-center gap-1">
+                <User className="w-4 h-4 text-green-600" />
+                Last Name
+              </Label>
+              <Input
+                id="lastName"
+                type="text"
+                placeholder="Enter your last name"
+                className="focus-visible:ring-green-600"
+                required
+              />
+            </div>
+
             <div className="grid gap-2">
               <Label htmlFor="nic" className="flex items-center gap-1">
                 <Key className="w-4 h-4 text-green-600" />
@@ -103,13 +130,12 @@ export function CreateAccountPage() {
                 type="password"
                 placeholder="Re-enter your password"
                 className="focus-visible:ring-green-600"
-                onChange={(e) =>
-                  validatePassword(
-                    (document.getElementById("password") as HTMLInputElement)
-                      .value,
-                    e.target.value
-                  )
-                }
+                onChange={(e) => {
+                  const passwordInput = document.getElementById("password") as HTMLInputElement;
+                  if (passwordInput) {
+                    validatePassword(passwordInput.value, e.target.value);
+                  }
+                }}
                 required
               />
               {passwordError && (
@@ -126,20 +152,19 @@ export function CreateAccountPage() {
             <div className="text-sm text-center">
               <span className="text-muted-foreground">
                 Already have an account?{" "}
-                <Link
-                  to={"/login"}
+                <a
+                  href="/login"
                   className="text-green-600 hover:underline hover:text-green-700"
                 >
                   Sign In
-                </Link>
+                </a>
               </span>
             </div>
           </CardFooter>
         </Card>
       </div>
-
-      {/* Sri Lankan Theme Decoration */}
-      <div className="absolute bottom-0 w-full h-2 bg-gradient-to-r from-yellow-400 via-orange-500 to-green-600" />
     </div>
   );
-}
+};
+
+export default CreateAccountPage;

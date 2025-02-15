@@ -5,7 +5,9 @@ import Home from './pages/Home';
 import { SignInPage } from './pages/SignInPage';
 import { CreateAccountPage } from './pages/CreateAccountPage';
 import WeatherPage from './pages/WeatherPage';
-import PredictionPage from './pages/PredictionPage'; 
+import Market from './pages/Market';
+import CreateAccountPage from './pages/CreateAccountPage';
+
 function App() {
   return (
     <Router>
@@ -19,6 +21,7 @@ function App() {
             <Route path="/createaccount" element={<CreateAccountPage />} />
             <Route path="/weather" element={<WeatherPage />} />
             <Route path="/predict" element={<PredictionPage />} /> {/* ✅ New Route */}
+            <Route path="/market" element={<Market />} />
           </Routes>
         </main>
       </div>
