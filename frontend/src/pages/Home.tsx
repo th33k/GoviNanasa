@@ -15,6 +15,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel";
 import { Button } from '@/components/ui/Button';
+import { Link } from 'react-router-dom';
 
 interface FeatureCardProps {
   title: string;
@@ -84,12 +85,12 @@ export default function Home() {
             market opportunities, and financial support
           </p>
           <div className="flex justify-center gap-4">
+            <Link to="/login" className="w-full">
             <Button size="lg" className="bg-green-600 hover:bg-green-700">
               Get Started
             </Button>
-            <Button size="lg" variant="outline">
-              Watch Demo
-            </Button>
+            </Link>
+            
           </div>
         </div>
 

@@ -3,10 +3,10 @@ import { Header } from './components/layout/Header';
 import { Dashboard } from './pages/Dashboard';
 import Home from './pages/Home';
 import { SignInPage } from './pages/SignInPage';
-import { CreateAccountPage } from './pages/CreateAccountPage';
 import WeatherPage from './pages/WeatherPage';
 import Market from './pages/Market';
 import CreateAccountPage from './pages/CreateAccountPage';
+import PredictionPage from './pages/PredictionPage';
 
 function App() {
   return (
