@@ -26,6 +26,9 @@ export function Header() {
             <Link to="/dashboard" className="text-gray-700 hover:text-blue-600">
               Dashboard
             </Link>
+            <Link to="/weather" className="text-gray-800 hover:text-blue-500">
+            Weather
+           </Link>
             {isAuthenticated ? (
               <div className="relative">
                 <Button

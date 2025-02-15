@@ -3,6 +3,7 @@ import { Header } from './components/layout/Header';
 import { Login } from './pages/Login';
 import { Dashboard } from './pages/Dashboard';
 import Home from './pages/Home';
+import WeatherPage from './pages/WeatherPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/weather" element={<WeatherPage />} />
           </Routes>
         </main>
       </div>
