@@ -44,6 +44,9 @@ export function Header() {
             <Link to="/" className="text-xl font-bold text-green-600">
             ගොවි නැණස
             </Link>
+            <Link to="/" className="text-xl font-bold text-blue-600">
+            <img src="/assets/Logo.png" alt="Logo" className="h-8 w-auto" />
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
