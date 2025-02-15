@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Link } from 'react-router-dom';
 
 export function SignInPage() {
   return (
@@ -85,7 +86,7 @@ export function SignInPage() {
               className="w-full flex gap-2 text-green-600 hover:text-green-700"
             >
               <User className="w-4 h-4" />
-              Create New Account
+              <Link to="/createaccount">Create New Account</Link>
             </Button>
           </CardFooter>
         </Card>
