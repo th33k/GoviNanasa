@@ -3,10 +3,10 @@ import { Header } from './components/layout/Header';
 import { Dashboard } from './pages/Dashboard';
 import Home from './pages/Home';
 import { SignInPage } from './pages/SignInPage';
+import { CreateAccountPage } from './pages/CreateAccountPage';
 import WeatherPage from './pages/WeatherPage';
 import Market from './pages/Market';
 import CreateAccountPage from './pages/CreateAccountPage';
-
 
 function App() {
   return (
@@ -20,6 +20,7 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/createaccount" element={<CreateAccountPage />} />
             <Route path="/weather" element={<WeatherPage />} />
+            <Route path="/predict" element={<PredictionPage />} /> {/* ✅ New Route */}
             <Route path="/market" element={<Market />} />
           </Routes>
         </main>
