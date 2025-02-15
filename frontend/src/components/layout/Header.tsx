@@ -59,6 +59,9 @@ export function Header() {
             <Link to="/weather" className="text-gray-700 hover:text-green-600">
               Weather
             </Link>
+            <Link to="/predict" className="text-gray-700 hover:text-green-600">
+              Crop Prediction
+            </Link>
             <Link to="/support" className="text-gray-700 hover:text-green-600">
               Support
             </Link>
