@@ -74,7 +74,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="text-center mb-16 space-y-6">
           <h1 className="text-5xl font-bold text-gray-900">
-            ගොවි සහයෝගය
+          ගොවි නැණස
             <span className="block text-2xl text-green-600 mt-2">
               Empowering Sri Lankan Agriculture
             </span>
