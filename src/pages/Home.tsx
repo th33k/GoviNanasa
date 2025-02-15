@@ -110,7 +110,7 @@ export default function Home() {
                   title="Digital market"
                   icon={Store}
                   description="Connect directly with buyers, access fair prices, and sell your produce without intermediaries"
-                  imagePath='assets/market.webp'
+                  imagePath='assets/marketplace.webp'
                   
                 />
               </CarouselItem>
@@ -140,7 +140,7 @@ export default function Home() {
             title="Digital market"
             icon={Store}
             description="Connect directly with buyers, access fair prices, and sell your produce without intermediaries"
-            imagePath='assets/market.webp'
+            imagePath='assets/marketplace.webp'
           />
           <FeatureCard
             title="Financial Support"
