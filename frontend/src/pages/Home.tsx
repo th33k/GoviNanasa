@@ -103,7 +103,7 @@ export default function Home() {
                   title="Climate Smart Farming"
                   icon={CloudRain}
                   description="Access real-time weather data, climate predictions, and smart resource management tools tailored for your region"
-                  imagePath='./assets/weather.png'
+                  imagePath='assets/weather.png'
                 />
               </CarouselItem>
               <CarouselItem>
@@ -111,7 +111,7 @@ export default function Home() {
                   title="Digital market"
                   icon={Store}
                   description="Connect directly with buyers, access fair prices, and sell your produce without intermediaries"
-                  imagePath='.assets/marketplace.png'
+                  imagePath='assets/marketplace.png'
                   
                 />
               </CarouselItem>
@@ -120,7 +120,7 @@ export default function Home() {
                   title="Financial Support"
                   icon={Calculator}
                   description="Easy access to loans, subsidies, and insurance specially designed for agricultural needs"
-                  imagePath='./assets/financial.png'
+                  imagePath='assets/financial.png'
                 />
               </CarouselItem>
             </CarouselContent>
