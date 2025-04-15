@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Menu, X, User, Globe } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useAuthStore } from '../../store/auth';
-import { Button } from '../ui/Button';
+import { Button } from '../ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
